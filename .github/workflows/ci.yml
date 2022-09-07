@@ -29,3 +29,7 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
       - name: build
         run: node build.js
+      - uses: actions/upload-artifact@v3
+        with:
+          name: file.txt
+          path: out/file.txt
